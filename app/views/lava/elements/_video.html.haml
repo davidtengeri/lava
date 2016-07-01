@@ -1,5 +1,5 @@
 .cms{:id => "element_#{element.id}", :class => "editable #{element.md5_reference}", :style => "width:#{args[:width]}px;height:#{args[:height] + 25}px"}
-  %iframe{:class => "youtube-player", :type => "text/html", :width => "#{args[:width]}", :height => "#{args[:height]}", :src => "http://www.youtube.com/embed/#{element.value}?rel=0", :frameborder => "0"}
+  %iframe{:class => "youtube-player", :type => "text/html", :width => "#{args[:width]}", :height => "#{args[:height]}", :src => "http://www.youtube.com/embed/#{element.value}?rel=0&showinfo=0&controls=0", :frameborder => "0"}
   - if can_edit?
     .video_controls
       %ul
