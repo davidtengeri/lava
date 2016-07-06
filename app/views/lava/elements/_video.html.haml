@@ -1,7 +1,7 @@
 .cms{:id => "element_#{element.id}", :class => "editable #{element.md5_reference}", :style => "width:#{args[:width]}px;height:#{args[:height] + 25}px"}
-  %iframe{:class => "youtube-player", :type => "text/html", :width => "#{args[:width]}", :height => "#{args[:height]}", :src => "https://www.youtube.com/embed/#{element.value}?rel=0&showinfo=0&controls=0", :frameborder => "0"}
+  %iframe{:class => "vimeo-player", :type => "text/html", :width => "#{args[:width]}", :height => "#{args[:height]}", :src => "#{element.value}?title=0&byline=0&portrait=0", :frameborder => "0"}
   - if can_edit?
     .video_controls
       %ul
-        %li= link_to "Add YouTube Video", nil, :id => "ajaxupload_#{element.md5_reference}"
+        %li= link_to "Add Vimeo Video", nil, :id => "ajaxupload_#{element.md5_reference}"
         /%li= link_to "Delete", lava.element_path(element.id), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?"
