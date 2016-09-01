@@ -10,7 +10,7 @@ module Lava
     private
 
     def convert_video_url
-      if self.element_type == 'video' && self.value.match(/https:\/\/vimeo\.com\/.*/)
+      if self.element_type == 'video' && self.value.present? && self.value.match(/https:\/\/vimeo\.com\/.*/)
         self.value = self.value.gsub(/https:\/\/vimeo\.com\//, 'https://player.vimeo.com/video/')
       end
     end
